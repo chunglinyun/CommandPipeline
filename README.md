@@ -161,4 +161,4 @@ dotnet build CommandPipeline.sln
 
 ## 授權
 
-目前 repository 未提供授權條款檔案（例如 `LICENSE`）。若要對外釋出，建議補上授權資訊。
+本專案採用 MIT License，詳見 [`LICENSE`](LICENSE)。
