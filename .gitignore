@@ -1,6 +1,7 @@
 bin/
 obj/
 idea/
+debug/
 /packages/
 riderModule.iml
 /_ReSharper.Caches/
