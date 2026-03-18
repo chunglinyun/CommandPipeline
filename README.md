@@ -128,6 +128,7 @@ public static async Task DemoAsync(IMediator mediator, CancellationToken ct)
 ```text
 CommandPipeline/
   CommandPipeline.sln
+  CommandPipeline.Tests.sln
   global.json
   CommandPipeline/
     CommandPipeline.csproj
@@ -141,6 +142,12 @@ CommandPipeline/
       ParallelStage.cs
       SequentialStage.cs
       SequentialStageWithResult.cs
+  tests/
+    CommandPipeline.UnitTests/
+      CommandPipeline.UnitTests.csproj
+      Orchestration/
+        CommandChainTests.cs
+        OrderProcessingChainTests.cs
 ```
 
 ## 開發指令
@@ -150,6 +157,7 @@ CommandPipeline/
 ```powershell
 dotnet restore
 dotnet build CommandPipeline.sln
+dotnet test CommandPipeline.Tests.sln
 ```
 
 ## 已知限制（依目前程式碼）

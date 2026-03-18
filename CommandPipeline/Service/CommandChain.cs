@@ -9,10 +9,10 @@ public class CommandChain
 {
     private readonly IMediator _mediator;
     private readonly List<IChainStage> _stages = new();
-    private readonly List<IRequest> _pendingParallel = new();
+    private readonly List<IBaseRequest> _pendingParallel = new();
 
     public static CommandChain Create(IMediator mediator) => new(mediator);
-    private CommandChain(IMediator mediator) => _mediator = mediator;
+    public CommandChain(IMediator mediator) => _mediator = mediator;
 
     // 有順序命令：先把暫存的 Parallel group flush 掉
     public CommandChain Then<TCommand>(TCommand command)
@@ -66,5 +66,12 @@ public class CommandChain
         }
 
         return ctx;
+    }
+    
+    // 強制封裝目前暫存的 parallel group
+    public CommandChain Barrier()
+    {
+        FlushParallel(); 
+        return this;
     }
 }

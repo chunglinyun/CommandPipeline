@@ -5,7 +5,7 @@ using CommandPipeline.Core;
 namespace CommandPipeline.Stages;
 
 // 無順序：與其他 Parallel Stage 一起跑
-public class ParallelStage(IEnumerable<IRequest> commands, IMediator mediator) : IChainStage
+public class ParallelStage(IEnumerable<IBaseRequest> commands, IMediator mediator) : IChainStage
 {
     public async Task ExecuteAsync(ChainContext ctx)
     {
