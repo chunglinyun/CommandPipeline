@@ -1,9 +1,9 @@
-using MediatR;
 using CommandPipeline.Abstractions;
 using CommandPipeline.Core;
 using CommandPipeline.Stages;
+using MediatR;
 
-namespace CommandPipeline.Orchestration;
+namespace CommandPipeline.Service;
 
 public class CommandChain
 {
